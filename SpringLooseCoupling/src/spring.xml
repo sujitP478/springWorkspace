@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="car" class="com.perennial.lc.Car" autowire-candidate="false">
+</bean>
+<bean id="bike" class="com.perennial.lc.Bike">
+</bean>
+
+<bean id="person" class="com.perennial.lc.Person" autowire="constructor">
+<constructor-arg value="Rakesh" index="0" />
+<constructor-arg value="Rakesh@gmail.com" index="1" />
+
+</bean>
+
+</beans>
