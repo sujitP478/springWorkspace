@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+     
+ <!--    <bean id="b1" class="com.perennialsys.demo.Batch">
+    	<property name="bid" value="101"/>
+    	<property name="bname" value="EnpBirla"/>
+    	<property name="tname" value="Kalyani"/>
+    </bean>  
+    <bean id="s1" class="com.perennialsys.demo.Student">
+		<constructor-arg value="2"/>
+		<constructor-arg value="Nirgude"/>
+		<constructor-arg ref="b1"/>
+		<constructor-arg>
+			<bean class="com.perennialsys.demo.Address">
+				<property name="city" value="Pune"/>
+				<property name="state" value="Maharashtra"/>
+				
+			</bean>
+		</constructor-arg>
+	</bean>  
+	
+	
+	<bean id="s2" class="com.perennialsys.demo.Student">
+		<property name="sid" value="1"/>
+		<property name="sname" value="Sujit"/>
+		<property name="batch" ref="b1"/> 
+		<property name="addr" >
+		<bean class="com.perennialsys.demo.Address">
+				<property name="city" value="Pune"/>
+				<property name="state" value="Maharashtra"/>
+				
+			</bean>
+		</property> 
+	</bean>      
+	 -->
+	 
+	<!-- ********************************************************** -->
+	
+	<!-- autowire=byName -->
+	
+<!-- 	<bean id="batch" class="com.perennialsys.demo.Batch">
+		<property name="bid" value="555"/>
+    	<property name="bname" value="Java"/>
+    	<property name="tname" value="Shekhar"/>
+	</bean>
+	<bean id="addr" class="com.perennialsys.demo.Address">
+		<property name="city" value="Nashik"/>
+				<property name="state" value="Maharashtra"/>
+				
+	</bean>
+	
+      <bean id="s3" class="com.perennialsys.demo.Student" autowire="byName">
+      	<property name="sid" value="3"/>
+		<property name="sname" value="Sanjay"/>
+      </bean>
+	 -->
+	 
+	 <!-- ********************************************************** -->
+	
+		<!-- ********************************************************** -->
+	
+	<!-- autowire=byType -->
+	
+	<!-- <bean id="b2" class="com.perennialsys.demo.Batch">
+		<property name="bid" value="777"/>
+    	<property name="bname" value="Angular"/>
+    	<property name="tname" value="Rakesh"/>
+	</bean>
+	
+	<bean id="a1" class="com.perennialsys.demo.Address">
+		<property name="city" value="Mumbai"/>
+				<property name="state" value="Maharashtra"/>
+				
+	</bean>
+	 -->
+	
+	<!-- if we have >1 bean it will show ambiguity, he doesnt get name of bean...we have to write autowire-candidate=f  --> 
+	<!-- <bean id="b3" class="com.perennialsys.demo.Batch" autowire-candidate="false">
+		<property name="bid" value="888"/>
+    	<property name="bname" value="Angular"/>
+    	<property name="tname" value="Rakesh"/>
+	</bean>
+	<bean id="a2" class="com.perennialsys.demo.Address" autowire-candidate="false">
+		<property name="city" value="Banglore"/>
+				<property name="state" value="Maharashtra"/>		
+	</bean> -->
+	
+    <!--   <bean id="s4" class="com.perennialsys.demo.Student" autowire="byType">
+      	<property name="sid" value="4"/>
+		<property name="sname" value="Rushikesh"/>
+      </bean>
+	 -->
+	<!-- ********************************************************** -->
+	
+	<!-- autowire-constructor -->
+	<bean id="b2" class="com.perennialsys.demo.Batch">
+		<property name="bid" value="777"/>
+    	<property name="bname" value="Angular"/>
+    	<property name="tname" value="Rakesh"/>
+	</bean>
+	
+	<bean id="a1" class="com.perennialsys.demo.Address">
+		<property name="city" value="Mumbai"/>
+				<property name="state" value="Maharashtra"/>
+				
+	</bean>
+	<bean id="s5" class="com.perennialsys.demo.Student" autowire="constructor">
+		<constructor-arg value="999" type="int"/>
+		<constructor-arg value="Alka"/>
+	
+	</bean>
+	
+</beans>
