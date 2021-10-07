@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+	<bean id="b1" class="com.perennialsys.annotation.setter.Batch">
+		<property name="bid" value="777" />
+		<property name="bname" value="Angular" />
+		<property name="tname" value="Rakesh" />
+	</bean>
+	<!-- ****** If >1 of same type beans are there ********* -->
+	<!-- First it will try autowire=byType,,batch=batch,,if matched then it 
+		will inject batch bean -->
+	<!-- <bean id="batch" class="com.perennialsys.annotation.setter.Batch"> 
+		<property name="bid" value="333" /> <property name="bname" value="Spring" 
+		/> <property name="tname" value="Logan" /> </bean> -->
+
+	<!-- if same type >1 beans are there(((see Student class batch setter **@Qualifier("beanId")** 
+		annotation use -->
+
+	<bean id="b2" class="com.perennialsys.annotation.setter.Batch">
+		<property name="bid" value="888" />
+		<property name="bname" value="Hibernate" />
+		<property name="tname" value="Alok" />
+	</bean>
+
+	<bean id="addr" class="com.perennialsys.annotation.setter.Address">
+		<property name="city" value="Mumbai" />
+		<property name="state" value="Maharashtra" />
+
+	</bean>
+	<bean id="s1" class="com.perennialsys.annotation.setter.Student"
+		scope="singleton">
+		<property name="sid" value="251"></property>
+		<property name="sname" value="rohit"></property>
+	</bean>
+
+</beans>
+    
