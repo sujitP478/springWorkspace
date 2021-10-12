@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+        
+        
+<!-- 
+        <bean id="car" class="com.perennial.springcore.Car">
+        <property name="modelName" value="Accord" />
+        <property name="cost" value="1500000"/>
+        *********************************************
+        <lookup-method name="getEngine" bean="e1"/>  or look at Engine class annotation scope and lookup for getEngine()
+        lookup-method===container will create a subclass and overrides the getEngine method in it
+        </bean>
+        <bean id="e1" class="com.perennial.springcore.Engine" scope="prototype">
+        <property name="eid" value="1"/>
+        <property name="eType" value="ethanol"/>     
+        </bean> -->
+        
+        <context:component-scan base-package="com.perennial.springcore"></context:component-scan>
+</beans>
+
+
